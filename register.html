@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FF BATTLE ARENA - Register Squad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&family=Rajdhani:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #FF5F1F;
+      --secondary: #2A2A72;
+      --accent: #00B4D8;
+      --dark: #1A1A2E;
+      --light: #F8F9FA;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--dark);
+      font-family: 'Oxanium', cursive;
+      color: white;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .navbar {
+      background: rgba(26, 26, 46, 0.9);
+      padding: 15px 0;
+      border-bottom: 2px solid var(--primary);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(5px);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 5px 0;
+    }
+
+    .nav-link:hover {
+      color: var(--accent);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link.active {
+      color: var(--primary);
+    }
+
+    .nav-link.active::after {
+      width: 100%;
+      background: var(--accent);
+    }
+
+    .main-container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(26, 26, 46, 0.95);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0, 180, 216, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-family: 'Rajdhani', sans-serif;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--light);
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid var(--accent);
+      background: transparent;
+      color: white;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button {
+      background: var(--primary);
+      color: white;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: var(--accent);
+    }
+
+    .form-section {
+      margin-bottom: 30px;
+    }
+
+    .form-section h2 {
+      font-size: 1.3rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 5px;
+    }
+  
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+      }
+      .hero h1, .page-title {
+        font-size: 2rem !important;
+      }
+      .cards, .squads-grid {
+        grid-template-columns: 1fr !important;
+      }
+      input, button, .card, .main-container {
+        width: 100% !important;
+      }
+      body {
+        padding: 10px;
+      }
+    }
+    
+</style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">FF BATTLE ARENA</div>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="squads.html" class="nav-link">Squads</a>
+        <a href="register.html" class="nav-link active">Register</a>
+      </nav>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <h1>Register Your Squad</h1>
+    <form action="https://formspree.io/f/xyzenlzr" method="POST">
+      <div class="form-section">
+        <h2>Squad Info</h2>
+        <label>Squad Name</label>
+        <input type="text" name="Squad Name" required />
+      </div>
+
+      <div class="form-section">
+        <h2>Leader</h2>
+        <label>Leader Name</label>
+        <input type="text" name="Leader Name" required />
+        <label>Leader UID</label>
+        <input type="text" name="Leader UID" required />
+        <label>Leader Email</label>
+        <input type="email" name="Leader Email" required />
+        <label>Leader Phone</label>
+        <input type="tel" name="Leader Phone" required />
+      </div>
+
+      <div class="form-section">
+        <h2>Player 2</h2>
+        <label>Player 2 Name</label>
+        <input type="text" name="Player 2 Name" required />
+        <label>Player 2 UID</label>
+        <input type="text" name="Player 2 UID" required />
+      </div>
+
+      <div class="form-section">
+        <h2>Player 3</h2>
+        <label>Player 3 Name</label>
+        <input type="text" name="Player 3 Name" required />
+        <label>Player 3 UID</label>
+        <input type="text" name="Player 3 UID" required />
+      </div>
+
+      <div class="form-section">
+        <h2>Player 4</h2>
+        <label>Player 4 Name</label>
+        <input type="text" name="Player 4 Name" required />
+        <label>Player 4 UID</label>
+        <input type="text" name="Player 4 UID" required />
+      </div>
+
+      <center><button type="submit">Submit Squad</button></center>
+    </form>
+  </div>
+</body>
+</html>
